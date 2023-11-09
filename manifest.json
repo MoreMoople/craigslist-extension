@@ -10,7 +10,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["<all_urls>", "https://*.craigslist.org/*"],
       "js": ["content.js"]
     }
   ]
