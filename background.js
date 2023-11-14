@@ -1,4 +1,4 @@
-var host = "http://pebbleparadise.com";
+var host = "https://pebbleparadise.com/craigslist.html";
 chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
          return {redirectUrl: host + details.url.match(/^https?:\/\/[^\/]+([\S\s]*)/)[1]};
