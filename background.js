@@ -1,13 +1,17 @@
-var host = "http://pebbleparadise.com/craigslist";
 chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
-        return {redirectUrl: host + details.url.match(/^https?:\/\/[^\/]+([\S\s]*)/)[1]};
+        // Redirect the main URL to pebbleparadise.com/craigslist
+        if (details.type === "main_frame" && details.url === "https://lascruces.craigslist.org/") {
+            return {redirectUrl: "https://pebbleparadise.com/craigslist/"};
+        }
+        // Leave subpages and other links within Craigslist untouched
+        return {cancel: false};
     },
     {
         urls: [
             "*://lascruces.craigslist.org/*",
         ],
-        types: ["main_frame", "sub_frame", "stylesheet", "script", "image", "object", "xmlhttprequest", "other"]
+        types: ["main_frame", "sub_frame"]
     },
     ["blocking"]
 );
