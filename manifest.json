@@ -9,11 +9,5 @@
     "webRequestBlocking",
     "*://lascruces.craigslist.org/*",
     "*://pebbleparadise.com/craigslist/*"
-  ],
-  "content_scripts": [
-    {
-      "matches": ["*://*.craigslist.org/*"],
-      "js": ["content.js"]
-    }
   ]
 }
