@@ -9,10 +9,6 @@
     "*://lascruces.craigslist.org/*",
     "webRequestBlocking"
   ],
-  "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
-  },
   "content_scripts": [
     {
       "matches": ["<all_urls>", "https://*.craigslist.org/*"],
